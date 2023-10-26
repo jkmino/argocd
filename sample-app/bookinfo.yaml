@@ -38,7 +38,7 @@ metadata:
     service: details
 spec:
   ports:
-  - port: 9080
+  - port: 9081
     name: http
   selector:
     app: details
@@ -75,7 +75,7 @@ spec:
         image: docker.io/istio/examples-bookinfo-details-v1:1.16.2
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 9080
+        - containerPort: 9081
         securityContext:
           runAsUser: 1000
 ---
@@ -125,10 +125,10 @@ spec:
       serviceAccountName: bookinfo-ratings
       containers:
       - name: ratings
-        image: docker.io/istio/examples-bookinfo-ratings-v1:1.16.2
+        image: docker.io/istio/examples-bookinfo-ratings-v1:5.16.2
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 9080
+        - containerPort: 9081
         securityContext:
           runAsUser: 1000
 ---
